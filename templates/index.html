@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Co-Agent</h1>
+        <form method="POST">
+            <label for="problem_description">Describe the problem or ask for a code snippet:</label>
+            <input type="text" name="problem_description" id="problem_description" placeholder="e.g., Write a Python function to check if a number is prime." required>
+            <button type="submit">Generate Code</button>
+        </form>
+
+        {% if code %}
+        <div class="ai-output">
+            <h2>Generated Code:</h2>
+            <pre>{{ code }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
